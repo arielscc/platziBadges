@@ -5,6 +5,7 @@ import Badge from '../components/Badge/Badge';
 import imgHeader from '../images/badge-header.svg';
 
 import './BadgeNew.css';
+import BadgeForm from '../components/BadgeForm/BadgeForm';
 
 export const BadgeNew = () => {
   return (
@@ -14,8 +15,8 @@ export const BadgeNew = () => {
         <img src={imgHeader} alt="" />
       </div>
       <div className="container">
-        <div className="col">
-          <div className="row">
+        <div className="row">
+          <div className="col-6">
             <Badge
               firstName="Ariel"
               lastName="Chura"
@@ -23,6 +24,9 @@ export const BadgeNew = () => {
               twitter="arielscc"
               avatar="https://www.gravatar.com/avatar/105e460b479e2e5b48aec07710c08d50?r=pg"
             />
+          </div>
+          <div className="col-6">
+            <BadgeForm />
           </div>
         </div>
       </div>

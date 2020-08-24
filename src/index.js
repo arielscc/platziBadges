@@ -11,7 +11,7 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './global.css';
 
-import { Badge } from './components/Badge/Badge';
+// import { Badge } from './components/Badge/Badge';
 import { BadgeNew } from './pages/BadgeNew';
 
 // const element = <h1>Hola platzi badgets :D 🎉🎉</h1>;
