@@ -3,7 +3,7 @@ import React from 'react';
 import confLogo from '../../images/badge-header.svg';
 import './Badge.css';
 
-export const Badge = ({ firstName, lastName, title, twitter, avatar }) => {
+export default function Badge({ firstName, lastName, title, twitter, avatar }) {
   return (
     <div className="badge">
       <div className="badge_header">
@@ -23,4 +23,4 @@ export const Badge = ({ firstName, lastName, title, twitter, avatar }) => {
       <div className="badge_footer">#PlatziConf</div>
     </div>
   );
-};
+}
