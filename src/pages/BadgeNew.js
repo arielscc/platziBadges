@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import Navbar from '../components/Navbar/Navbar';
 import Badge from '../components/Badge/Badge';
-
 import imgHeader from '../images/badge-header.svg';
 
 import './BadgeNew.css';
@@ -30,7 +28,6 @@ export default function BadgeNew() {
   };
   return (
     <div>
-      <Navbar />
       <div className="BadgeNew__hero">
         <img src={imgHeader} alt="" />
       </div>

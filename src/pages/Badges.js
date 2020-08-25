@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-import Navbar from '../components/Navbar/Navbar';
 import confLogo from '../images/badge-header.svg';
 
 import './Badges.css';
@@ -41,7 +40,6 @@ export default function Badges() {
   });
   return (
     <div>
-      <Navbar />
       <div className="Badges">
         <div className="Badges__hero">
           <div className="Badges__container">
