@@ -13,7 +13,8 @@ import './global.css';
 
 // import { Badge } from './components/Badge/Badge';
 // import { BadgeNew } from './pages/BadgeNew';
-import Badges from './pages/Badges';
+// import Badges from './pages/Badges';
+import App from './components/App';
 
 // const element = <h1>Hola platzi badgets :D 🎉🎉</h1>;
 const container = document.querySelector('#app');
@@ -21,7 +22,7 @@ const container = document.querySelector('#app');
 // ReactDOM.render(__que__, __donde__);
 ReactDOM.render(
   <div>
-    <Badges />
+    <App />
   </div>,
   container
 );

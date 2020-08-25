@@ -7,7 +7,7 @@ import imgHeader from '../images/badge-header.svg';
 import './BadgeNew.css';
 import BadgeForm from '../components/BadgeForm/BadgeForm';
 
-export const BadgeNew = () => {
+export default function BadgeNew() {
   const [state, setState] = useState({
     form: {
       firstName: '',
@@ -53,4 +53,4 @@ export const BadgeNew = () => {
       </div>
     </div>
   );
-};
+}
