@@ -12,7 +12,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './global.css';
 
 // import { Badge } from './components/Badge/Badge';
-import { BadgeNew } from './pages/BadgeNew';
+// import { BadgeNew } from './pages/BadgeNew';
+import Badges from './pages/Badges';
 
 // const element = <h1>Hola platzi badgets :D 🎉🎉</h1>;
 const container = document.querySelector('#app');
@@ -20,7 +21,7 @@ const container = document.querySelector('#app');
 // ReactDOM.render(__que__, __donde__);
 ReactDOM.render(
   <div>
-    <BadgeNew />
+    <Badges />
   </div>,
   container
 );
