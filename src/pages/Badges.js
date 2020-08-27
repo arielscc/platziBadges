@@ -6,6 +6,7 @@ import './Badges.css';
 import BadgesList from '../components/BadgesList/BadgesList';
 import { Link } from 'react-router-dom';
 import api from '../api';
+import ListSkeleton from '../components/BadgesList/ListSkeleton';
 export default function Badges() {
   const [state, setState] = useState({
     loading: true,
@@ -41,12 +42,15 @@ export default function Badges() {
             New Badge
           </Link>
         </div>
-        {state.loading && <p>Loading....</p>}
-        <div className="Badges__list">
-          <div className="Badges__container">
-            <BadgesList badges={state.data} />
+        {state.loading ? (
+          <ListSkeleton cantidad={50} />
+        ) : (
+          <div className="Badges__list">
+            <div className="Badges__container">
+              <BadgesList badges={state.data} />
+            </div>
           </div>
-        </div>
+        )}
         {state.error && <p>Error {state.error}</p>}
       </div>
     </>

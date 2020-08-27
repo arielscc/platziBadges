@@ -5,7 +5,6 @@ import './BadgesList.css';
 export default function BadgesList({ badges }) {
   return (
     <div className="BadgesList">
-      <div>{badges && <h3>No se encontró ningún badge! </h3>}</div>
       <ul className="list-unstyled">
         {badges.map(badge => {
           return (
