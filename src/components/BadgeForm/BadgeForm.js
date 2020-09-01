@@ -1,24 +1,13 @@
 import React from 'react';
 
-export default function BadgeForm({ onChange, formValues }) {
-  // const [input, setInput] = useState({
-  //   firstName: '',
-  //   lastName: '',
-  //   email: '',
-  //   jobTitle: '',
-  //   twitter: '',
-  // });
-  // const handleChange = e => {
-  //   setInput({ ...input, [e.target.name]: e.target.value });
-  // };
-
+export default function BadgeForm({ onChange, formValues, onSubmit }) {
   const handleClick = () => {
     console.log('se accionó el boton');
   };
   return (
     <div className="container">
       <h2>New Attendant</h2>
-      <form onSubmit={e => e.preventDefault()}>
+      <form onSubmit={onSubmit}>
         <div className="form-group">
           <label htmlFor="">First Name</label>
           <input

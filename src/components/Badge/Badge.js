@@ -2,6 +2,7 @@ import React from 'react';
 
 import confLogo from '../../images/badge-header.svg';
 import './Badge.css';
+import Gravatar from '../Gravatar/Gravatar';
 
 export default function Badge({ firstName, lastName, email, jobTitle, twitter, avatar }) {
   return (
@@ -10,7 +11,7 @@ export default function Badge({ firstName, lastName, email, jobTitle, twitter, a
         <img src={confLogo} alt="Logo Conferencia" />
       </div>
       <div className="badge_section-name">
-        <img className="badge_avatar" src={avatar} alt="Avatar" />
+        <Gravatar className="badge_avatar" email={email} alt="Avatar" />
         <h1>
           {firstName} <br /> {lastName}
         </h1>
