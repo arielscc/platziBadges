@@ -4,7 +4,7 @@ import confLogo from '../../images/badge-header.svg';
 import './Badge.css';
 import Gravatar from '../Gravatar/Gravatar';
 
-export default function Badge({ firstName, lastName, email, jobTitle, twitter, avatar }) {
+export default function Badge({ firstName, lastName, jobTitle, twitter, email }) {
   return (
     <div className="badge">
       <div className="badge_header">

@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import Badge from '../components/Badge/Badge';
-// import imgHeader from '../images/badge-header.svg';
-import platziconf from '../images/platziconf-logo.svg';
+import BadgeForm from '../components/BadgeForm/BadgeForm';
 
 import api from '../api';
 
 import './BadgeNew.css';
-import BadgeForm from '../components/BadgeForm/BadgeForm';
+
+import platziconf from '../images/platziconf-logo.svg';
 
 export default function BadgeNew() {
-  const [state, setState] = useState({
+  const initialState = {
     form: {
       firstName: '',
       lastName: '',
@@ -17,14 +17,16 @@ export default function BadgeNew() {
       jobTitle: '',
       twitter: '',
     },
-    loading: false,
     error: null,
-  });
+    loading: false,
+  };
 
+  const [state, setState] = useState(initialState);
   const { firstName, lastName, email, jobTitle, twitter } = state.form;
 
   const handleChange = e => {
     setState({
+      ...state,
       form: {
         ...state.form,
         [e.target.name]: e.target.value,
@@ -33,25 +35,23 @@ export default function BadgeNew() {
   };
 
   const handleSubmit = async e => {
-    e.preventDefault();
     try {
+      e.preventDefault();
       await api.badges.create(state.form);
-      setState({ ...state.form, loading: true });
-      console.log(state);
-    } catch (error) {}
-    // try {
-    //   e.preventDefault();
-    //   await api.badges.create(state.form);
-    //   setState({ loading: false });
-    // } catch (error) {
-    //   setState({ loading: false, error });
-    // }
+      setState({ ...initialState, loading: false });
+    } catch (error) {
+      setState({ ...state, loading: false, error });
+    }
   };
 
   return (
     <>
       <div className="BadgeNew__hero">
-        <img className="img-fluid BadgeNew__hero-image" src={platziconf} alt="" />
+        <img
+          className="img-fluid BadgeNew__hero-image"
+          src={platziconf}
+          alt=""
+        />
       </div>
       <div className="container">
         <div className="row">
@@ -62,11 +62,15 @@ export default function BadgeNew() {
               jobTitle={jobTitle || 'Job_Title'}
               twitter={twitter || 'twitter'}
               email={email}
-              avatar="https://www.gravatar.com/avatar/105e460b479e2e5b48aec07710c08d50?r=pg"
+              // avatar="https://www.gravatar.com/avatar/105e460b479e2e5b48aec07710c08d50?r=pg"
             />
           </div>
           <div className="col-6">
-            <BadgeForm onChange={handleChange} onSubmit={handleSubmit} formValues={state.form} />
+            <BadgeForm
+              onChange={handleChange}
+              onSubmit={handleSubmit}
+              formValues={state.form}
+            />
           </div>
         </div>
       </div>

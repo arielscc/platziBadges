@@ -21,8 +21,8 @@ const container = document.querySelector('#app');
 
 // ReactDOM.render(__que__, __donde__);
 ReactDOM.render(
-  <div>
+  <>
     <App />
-  </div>,
+  </>,
   container
 );

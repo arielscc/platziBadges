@@ -1,31 +1,39 @@
 import React, { useState, useEffect } from 'react';
+import BadgesList from '../components/BadgesList/BadgesList';
+import ListSkeleton from '../components/BadgesList/ListSkeleton';
+import { Link } from 'react-router-dom';
 
 import confLogo from '../images/badge-header.svg';
 
-import './Badges.css';
-import BadgesList from '../components/BadgesList/BadgesList';
-import { Link } from 'react-router-dom';
 import api from '../api';
-import ListSkeleton from '../components/BadgesList/ListSkeleton';
+import './Badges.css';
+
 export default function Badges() {
-  const [state, setState] = useState({
-    loading: true,
-    error: null,
+  const initialState = {
     data: [],
-  });
+    error: null,
+    loading: true,
+  };
+
+  const [state, setState] = useState(initialState);
 
   useEffect(() => {
-    fetchData();
-  }, [fetchData]);
-
-  const fetchData = async () => {
-    try {
-      const data = await api.badges.list();
-      setState({ loading: false, data });
-    } catch (error) {
-      setState({ loading: false, error });
-    }
-  };
+    api.badges.list().then(data => {
+      setState({ ...state, loading: false, data });
+    });
+    // return () => {
+    //   cleanup
+    // }
+  }, []);
+  // const fetchData = async () => {
+  //   try {
+  //     const data = await api.badges.list();
+  //     setState({ ...state, loading: false, data });
+  //   } catch (error) {
+  //     setState({ ...state, loading: false, error });
+  //   }
+  // };
+  // fetchData();
 
   return (
     <>
