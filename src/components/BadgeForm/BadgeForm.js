@@ -1,12 +1,8 @@
 import React from 'react';
 
 export default function BadgeForm({ onChange, formValues, onSubmit }) {
-  const handleClick = () => {
-    console.log('se accionó el boton');
-  };
   return (
     <div className="container">
-      <h2>New Attendant</h2>
       <form onSubmit={onSubmit}>
         <div className="form-group">
           <label htmlFor="">First Name</label>
@@ -68,7 +64,7 @@ export default function BadgeForm({ onChange, formValues, onSubmit }) {
           />
         </div>
 
-        <button onClick={handleClick} className="btn btn-primary">
+        <button type="submit" className="btn btn-primary">
           Save
         </button>
       </form>

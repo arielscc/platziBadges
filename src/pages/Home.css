@@ -1,0 +1,57 @@
+.homeBackground {
+  width: 100%;
+  height: calc(100vh - 60px);
+  background: url('../images/stars.svg'), #1b1b25;
+  background-repeat: repeat;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  box-sizing: border-box;
+}
+
+.home__content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home__content img {
+  width: 400px;
+}
+
+.home__content h1 {
+  margin: 1.5rem 0;
+}
+
+.button {
+  background: #6f942f;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+.button:hover {
+  background: #8ebe3c;
+  color: white;
+  text-decoration: none;
+}
+
+.button__create {
+  background: transparent;
+  box-shadow: inset 0 0 0 2px #6f942f;
+}
+.button__create:hover {
+  background: transparent;
+}
+
+.home__hero {
+  width: 50%;
+}
+
+.home__hero img {
+  width: 80%;
+}

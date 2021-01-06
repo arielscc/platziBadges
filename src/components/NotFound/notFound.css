@@ -1,0 +1,50 @@
+.notFound {
+  width: 100%;
+  height: calc(100vh - 60px);
+
+  background: url('../../images/stars.svg'), #1b1b25;
+  background-repeat: repeat;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+.logoNotFound {
+  min-width: 350px;
+}
+
+.notFound__content {
+  display: flex;
+  flex-direction: column;
+}
+.notFound__content img {
+  min-width: 300px;
+}
+.notFound__content p {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.notFound__content .button {
+  background: #759c31;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.5rem 4.5rem;
+  border-radius: 0.5rem;
+  color: white;
+  align-self: center;
+}
+
+.notFound__content button:hover {
+  background: #98ca3f;
+}
+
+@media (max-width: 600px) {
+  .notFound {
+    flex-direction: column-reverse;
+  }
+}

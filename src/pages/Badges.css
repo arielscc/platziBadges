@@ -13,13 +13,14 @@
 }
 
 .Badges__container {
-  width: 100%;
-  max-width: 580px;
+  width: 90%;
+  /* max-width: 580px; */
   margin: 0 auto;
 }
 
 .Badges_conf-logo {
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
+  min-width: 300px;
 }
 
 .Badges__buttons {

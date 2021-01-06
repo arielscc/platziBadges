@@ -4,14 +4,24 @@ import confLogo from '../../images/badge-header.svg';
 import './Badge.css';
 import Gravatar from '../Gravatar/Gravatar';
 
-export default function Badge({ firstName, lastName, jobTitle, twitter, email }) {
+import md5 from 'md5';
+
+export default function Badge({
+  firstName,
+  lastName,
+  jobTitle,
+  twitter,
+  email,
+}) {
+  const avatar = `https://www.gravatar.com/avatar/${md5(email)}?d=identicon`;
+
   return (
     <div className="badge">
       <div className="badge_header">
         <img src={confLogo} alt="Logo Conferencia" />
       </div>
       <div className="badge_section-name">
-        <Gravatar className="badge_avatar" email={email} alt="Avatar" />
+        <Gravatar className="badge_avatar" avatar={avatar} />
         <h1>
           {firstName} <br /> {lastName}
         </h1>

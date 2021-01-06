@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import BadgesList from '../components/BadgesList/BadgesList';
 import ListSkeleton from '../components/BadgesList/ListSkeleton';
 import { Link } from 'react-router-dom';
@@ -17,23 +17,21 @@ export default function Badges() {
 
   const [state, setState] = useState(initialState);
 
+  const isMounted = useRef(true);
+
   useEffect(() => {
-    api.badges.list().then(data => {
-      setState({ ...state, loading: false, data });
-    });
-    // return () => {
-    //   cleanup
-    // }
-  }, []);
-  // const fetchData = async () => {
-  //   try {
-  //     const data = await api.badges.list();
-  //     setState({ ...state, loading: false, data });
-  //   } catch (error) {
-  //     setState({ ...state, loading: false, error });
-  //   }
-  // };
-  // fetchData();
+    api.badges
+      .list()
+      .then(data => {
+        if (isMounted.current) {
+          setState({ ...state, loading: false, data });
+        }
+      })
+      .catch(erro => console.log(erro));
+    return () => {
+      isMounted.current = false;
+    };
+  }, [setState]);
 
   return (
     <>
@@ -54,9 +52,7 @@ export default function Badges() {
           <ListSkeleton cantidad={50} />
         ) : (
           <div className="Badges__list">
-            <div className="Badges__container">
-              <BadgesList badges={state.data} />
-            </div>
+            <BadgesList badges={state.data} />
           </div>
         )}
         {state.error && <p>Error {state.error}</p>}

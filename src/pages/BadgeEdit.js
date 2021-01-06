@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Badge from '../components/Badge/Badge';
 import BadgeForm from '../components/BadgeForm/BadgeForm';
 import { Grid } from 'svg-loaders-react';
 import api from '../api';
 import md5 from 'md5';
-import './BadgeNew.css';
-import { useHistory } from 'react-router-dom';
+import './BadgeEdit.css';
+import { useHistory, useParams } from 'react-router-dom';
 
 import platziconf from '../images/platziconf-logo.svg';
 
-export default function BadgeNew() {
+export default function BadgeEdit() {
   const initialState = {
     form: {
       firstName: '',
@@ -20,12 +20,23 @@ export default function BadgeNew() {
       avatarUrl: '',
     },
     error: null,
-    loading: false,
+    loading: true,
   };
-
   const [state, setState] = useState(initialState);
   let history = useHistory();
   const { firstName, lastName, email, jobTitle, twitter } = state.form;
+
+  let { badgeId } = useParams();
+
+  useEffect(() => {
+    api.badges.read(badgeId).then(data => {
+      console.log(data);
+      setState({ ...state, form: data, loading: false });
+    });
+    return () => {
+      // cleanup;
+    };
+  }, []);
 
   const handleChange = e => {
     setState({
@@ -50,7 +61,7 @@ export default function BadgeNew() {
           )}?d=identicon`,
         },
       };
-      await api.badges.create(data.form);
+      await api.badges.update(badgeId, data.form);
       setState({ ...initialState, loading: false });
       history.push('/badges');
     } catch (error) {
@@ -66,9 +77,9 @@ export default function BadgeNew() {
         </div>
       ) : (
         <div>
-          <div className="BadgeNew__hero">
+          <div className="BadgeEdit__hero">
             <img
-              className="img-fluid BadgeNew__hero-image"
+              className="img-fluid BadgeEdit__hero-image"
               src={platziconf}
               alt=""
             />
@@ -85,7 +96,7 @@ export default function BadgeNew() {
                 />
               </div>
               <div className="col-6">
-                <h2>New Attendant</h2>
+                <h2>Edit Attendant</h2>
                 <BadgeForm
                   onChange={handleChange}
                   onSubmit={handleSubmit}

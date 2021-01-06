@@ -19,9 +19,9 @@ export default function ListSkeleton({ cantidad }) {
                       <Skeleton width={200} />
                     </strong>
                     <br />
-                    <Skeleton width={400} />
+                    <Skeleton width={250} />
                     <br />
-                    <Skeleton width={400} />
+                    <Skeleton width={250} />
                   </div>
                 </div>
               </li>
