@@ -6,6 +6,16 @@ export default function ListSkeleton({ cantidad }) {
   return (
     <>
       <div className="BadgesList">
+        <div className="form-group">
+          <div
+            className="form-control"
+            style={{ border: 'none', height: '70px' }}
+          >
+            <Skeleton width={100} />
+            <br />
+            <Skeleton width={300} />
+          </div>
+        </div>
         <ul className="list-unstyled">
           {badges.map((_, i) => {
             return (

@@ -451,15 +451,6 @@
       "avatarUrl": "https://www.gravatar.com/avatar/9439e1da527bf8888fabb32bd8ee7b7d?d=identicon"
     },
     {
-      "firstName": "hola",
-      "lastName": "amigo",
-      "email": "loso",
-      "jobTitle": "algo",
-      "twitter": "me da",
-      "avatarUrl": "https://www.gravatar.com/avatar/77877889be0e49614a15143bf71ac175?d=wavatar",
-      "id": "kc0zkqi"
-    },
-    {
       "firstName": "Hola locos",
       "lastName": "123",
       "email": "1231",
@@ -467,60 +458,6 @@
       "twitter": "3123",
       "avatarUrl": "https://www.gravatar.com/avatar/6c14da109e294d1e8155be8aa4b1ce8e?d=wavatar",
       "id": "Z34S6kz"
-    },
-    {
-      "firstName": "aasd",
-      "lastName": "asd",
-      "email": "asd",
-      "jobTitle": "asd",
-      "twitter": "asdas",
-      "avatarUrl": "https://www.gravatar.com/avatar/7815696ecbf1c96e6894b779456d330e?d=identicon",
-      "id": "N7qZ073"
-    },
-    {
-      "firstName": "",
-      "lastName": "",
-      "email": "",
-      "jobTitle": "",
-      "twitter": "",
-      "avatarUrl": "https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=identicon",
-      "id": "s0WAGk8"
-    },
-    {
-      "firstName": "",
-      "lastName": "",
-      "email": "",
-      "jobTitle": "",
-      "twitter": "",
-      "avatarUrl": "https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=identicon",
-      "id": "PK2bsIM"
-    },
-    {
-      "firstName": "",
-      "lastName": "",
-      "email": "",
-      "jobTitle": "",
-      "twitter": "",
-      "avatarUrl": "https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=identicon",
-      "id": "CeS3gTs"
-    },
-    {
-      "firstName": "123",
-      "lastName": "",
-      "email": "",
-      "jobTitle": "",
-      "twitter": "",
-      "avatarUrl": "https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=identicon",
-      "id": "P7VoAzg"
-    },
-    {
-      "firstName": "algo amigos",
-      "lastName": "nucna",
-      "email": "perdan",
-      "jobTitle": "pasiencia",
-      "twitter": "lets go",
-      "avatarUrl": "https://www.gravatar.com/avatar/c2b9cdc9dbbe6569b42b16de3de2f25b?d=identicon",
-      "id": "0uqytT9"
     }
   ]
 }
