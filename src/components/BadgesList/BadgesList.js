@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './BadgesList.css';
 
@@ -11,7 +11,6 @@ export default function BadgesList({ badges }) {
 
   useMemo(() => {
     const result = badgesList.filter(badge => {
-      console.log('me llamé');
       return `${badge.firstName} ${badge.lastName}`
         .toLocaleLowerCase()
         .includes(filter.toLocaleLowerCase());
