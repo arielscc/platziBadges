@@ -11,3 +11,10 @@ Este proyecto fue realizado en el curso [ReactJs](https://platzi.com/clases/reac
 ```
 
 ### Scripts npm
+
+### EndPoints de json-server
+
+- Para Listar todos los datos del API `https://my-json-server.typicode.com/arielscc/platzi-conf-db/db`
+- Para Retornar un solo registro por id 'https://my-json-server.typicode.com/arielscc/platzi-conf-db/badges/:id'
+- second
+- third

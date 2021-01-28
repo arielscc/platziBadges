@@ -49,7 +49,7 @@ export default function Badges() {
           </Link>
         </div>
         {state.loading ? (
-          <ListSkeleton cantidad={50} />
+          <ListSkeleton cantidad={8} />
         ) : (
           <div className="Badges__list">
             <BadgesList badges={state.data} />

@@ -30,7 +30,6 @@ export default function BadgeEdit() {
 
   useEffect(() => {
     api.badges.read(badgeId).then(data => {
-      console.log(data);
       setState({ ...state, form: data, loading: false });
     });
     return () => {
